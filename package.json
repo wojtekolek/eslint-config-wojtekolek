@@ -3,9 +3,7 @@
   "version": "1.0.0",
   "description": "ESLint preset",
   "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+  "repository": "git@github.com:wojtekolek/eslint-config-wojtekolek.git",
   "keywords": [
     "eslint",
     "eslintconfig"
