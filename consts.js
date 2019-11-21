@@ -4,4 +4,6 @@ const STATE = {
   error: 2
 }
 
-export default STATE
+module.exports = {
+  ...STATE
+}
