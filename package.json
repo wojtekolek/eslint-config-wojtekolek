@@ -1,6 +1,6 @@
 {
-  "name": "eslint-config-wojtekolek",
-  "version": "1.0.0",
+  "name": "@wojtekolek/eslint-config",
+  "version": "1.0.1",
   "description": "ESLint preset",
   "main": "index.js",
   "repository": "git@github.com:wojtekolek/eslint-config-wojtekolek.git",
