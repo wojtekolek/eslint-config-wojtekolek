@@ -6,7 +6,7 @@
 npm i --save-dev @wojtekolek/eslint-config
 ``
 
-## Instalation
+## Usage
 Simply add below code to your `.eslintrc` file.
 
 ``
