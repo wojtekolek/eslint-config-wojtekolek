@@ -2,6 +2,7 @@ const { warning, off, error } = require('./consts')
 const restrictedGlobals = require('eslint-restricted-globals')
 
 module.exports = {
+  parser: 'babel-eslint',
   extends: [
     'eslint:recommended',
     'plugin:jest/recommended',
