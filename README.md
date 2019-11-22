@@ -22,7 +22,7 @@ All you need to do is make sure that you have installed following dependencies:
 - [typescript](https://www.npmjs.com/package/typescript)
 
 ## Using with Visual Studio Code
-If you are using VSC you may want a fully supported flow with eslint and prettier which will be triggered before saving a file. To achieve this first install ES[ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)Lint and [Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode) extensions for VSC. Next, add the following packages to your project `eslint` and `prettier-eslint` with the below command.
+If you are using VSC you may want a fully supported flow with eslint and prettier which will be triggered before saving a file. To achieve this first install [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint) and [Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode) extensions for VSC. Next, add the following packages to your project `eslint` and `prettier-eslint` with the below command.
 
 ``
 npm i --save-dev eslint prettier-eslint
