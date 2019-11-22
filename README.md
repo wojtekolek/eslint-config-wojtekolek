@@ -28,7 +28,7 @@ If you are using VSC you may want a fully supported flow with eslint and prettie
 npm i --save-dev eslint prettier-eslint
 ``
 
-The final step is to add below config to your `settings.js` file.
+The final step is to add below config to your `settings.json` file.
 
 ```
   "[javascript]": {
