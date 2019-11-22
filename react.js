@@ -29,7 +29,7 @@ module.exports = {
     'react-native/split-platform-components': off,
     'react-native/no-inline-styles': warning,
     'react-native/no-color-literals': warning,
-    'react-native/no-raw-text': error,
+    'react-native/no-raw-text': off,
     'react-hooks/rules-of-hooks': error,
     'react-hooks/exhaustive-deps': warning
   },
