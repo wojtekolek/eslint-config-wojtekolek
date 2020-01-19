@@ -15,11 +15,6 @@ module.exports = {
     es6: true,
     node: true
   },
-  settings: {
-    'import/resolver': {
-      'babel-module': {}
-    }
-  },
   plugins: [
     'jest',
     'prettier',
