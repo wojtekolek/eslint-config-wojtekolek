@@ -27,14 +27,6 @@ module.exports = {
     'import/prefer-default-export': off,
     'no-restricted-globals': [error].concat(restrictedGlobals),
     'no-restricted-syntax': [error, 'WithStatement'],
-    'prettier/prettier': [
-      error,
-      {
-        singleQuote: true,
-        trailingComma: 'none',
-        semi: false
-      }
-    ],
     'promise/prefer-await-to-then': warning,
     'import/no-extraneous-dependencies': [
       error,
