@@ -16,7 +16,7 @@ module.exports = {
     es6: true,
     node: true
   },
-  plugins: ['jest', 'prettier', 'import'],
+  plugins: ['jest', 'import'],
   parserOptions: {
     sourceType: 'module'
   },

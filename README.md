@@ -21,12 +21,14 @@ Simply add below code to your `.eslintrc` file:
 {
   "extends": "@wojtekolek/eslint-config"
 }
+
 ```
 
 To enable prettier just export following line inside `.prettierrc.js`:
 
 ```
-require('@wojtekolek/eslint-config/prettier.config')
+module.exports = require('@wojtekolek/eslint-config/prettier.config')
+
 ```
 
 ## TypeScript
