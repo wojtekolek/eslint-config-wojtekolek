@@ -7,19 +7,16 @@ module.exports = {
     'eslint:recommended',
     'plugin:jest/recommended',
     'plugin:promise/recommended',
+    'plugin:import/typescript',
     'prettier',
-    'plugin:import/typescript'
+    'prettier/@typescript-eslint'
   ],
   env: {
     browser: true,
     es6: true,
     node: true
   },
-  plugins: [
-    'jest',
-    'prettier',
-    'import'
-  ],
+  plugins: ['jest', 'prettier', 'import'],
   parserOptions: {
     sourceType: 'module'
   },
@@ -36,16 +33,13 @@ module.exports = {
         singleQuote: true,
         trailingComma: 'none',
         semi: false
-      },
+      }
     ],
     'promise/prefer-await-to-then': warning,
     'import/no-extraneous-dependencies': [
       error,
       {
-        devDependencies: [
-          '**/__tests__/**/*.[jt]s?(x)',
-          '**/?(*.)+(spec|test).[tj]s?(x)'
-        ]
+        devDependencies: ['**/__tests__/**/*.[jt]s?(x)', '**/?(*.)+(spec|test).[tj]s?(x)']
       }
     ]
   },
@@ -55,19 +49,16 @@ module.exports = {
       parser: '@typescript-eslint/parser',
       plugins: ['@typescript-eslint/eslint-plugin'],
       rules: {
-        '@typescript-eslint/no-unused-vars': [
-          error,
-          { argsIgnorePattern: '^_' },
-        ],
+        '@typescript-eslint/no-unused-vars': [error, { argsIgnorePattern: '^_' }],
         'no-dupe-class-members': off,
-        'no-unused-vars': off,
-      },
+        'no-unused-vars': off
+      }
     },
     {
       files: ['*.{spec,test}.{js,ts,tsx}', '**/__tests__/**/*.{js,ts,tsx}'],
       env: {
         jest: true,
-        'jest/globals': true,
+        'jest/globals': true
       }
     }
   ]
