@@ -1,22 +1,16 @@
-const { warning, off, error } = require('./consts')
+const { warning, off, error, TS_EXTENSIONS, ALL_EXTENSIONS } = require('./consts')
 const restrictedGlobals = require('eslint-restricted-globals')
+
+const TEST_PATTERNS = ['**/__tests__/**/*.[jt]s?(x)', '**/?(*.)+(spec|test).[tj]s?(x)']
 
 module.exports = {
   parser: 'babel-eslint',
-  extends: [
-    'eslint:recommended',
-    'plugin:jest/recommended',
-    'plugin:promise/recommended',
-    'plugin:import/typescript',
-    'prettier',
-    'prettier/@typescript-eslint'
-  ],
+  extends: ['eslint:recommended', 'plugin:promise/recommended', 'prettier'],
   env: {
-    browser: true,
     es6: true,
     node: true
   },
-  plugins: ['jest', 'import'],
+  plugins: ['import'],
   parserOptions: {
     sourceType: 'module'
   },
@@ -31,7 +25,7 @@ module.exports = {
     'import/no-extraneous-dependencies': [
       error,
       {
-        devDependencies: ['**/__tests__/**/*.[jt]s?(x)', '**/?(*.)+(spec|test).[tj]s?(x)']
+        devDependencies: TEST_PATTERNS
       }
     ]
   },
@@ -40,18 +34,32 @@ module.exports = {
       files: ['*.ts', '*.tsx'],
       parser: '@typescript-eslint/parser',
       plugins: ['@typescript-eslint/eslint-plugin'],
+      settings: {
+        'import/extensions': ALL_EXTENSIONS,
+        'import/parsers': {
+          '@typescript-eslint/parser': TS_EXTENSIONS
+        },
+        'import/resolver': {
+          node: {
+            extensions: ALL_EXTENSIONS
+          }
+        }
+      },
       rules: {
         '@typescript-eslint/no-unused-vars': [error, { argsIgnorePattern: '^_' }],
+        '@typescript-eslint/prefer-optional-chain': error,
         'no-dupe-class-members': off,
         'no-unused-vars': off
       }
     },
     {
-      files: ['*.{spec,test}.{js,ts,tsx}', '**/__tests__/**/*.{js,ts,tsx}'],
+      files: TEST_PATTERNS,
       env: {
         jest: true,
         'jest/globals': true
-      }
+      },
+      extends: ['plugin:jest/recommended'],
+      plugins: ['jest']
     }
   ]
 }

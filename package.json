@@ -1,12 +1,12 @@
 {
   "name": "@wojtekolek/eslint-config",
-  "version": "1.1.2",
+  "version": "1.2.0",
   "description": "ESLint preset with prettier config",
-  "main": "index.js",
+  "main": "node.js",
   "repository": "git@github.com:wojtekolek/eslint-config-wojtekolek.git",
   "keywords": [
     "eslint",
-    "eslintconfig",
+    "eslint config",
     "prettier"
   ],
   "author": "Wojtek Olek",
