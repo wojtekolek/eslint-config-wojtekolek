@@ -1,4 +1,4 @@
-const { warning, off, error } = require('./consts')
+const { warning, off, error, TEST_PATTERNS } = require('./consts')
 
 module.exports = {
   extends: [require.resolve('./node.js'), 'plugin:react/recommended', 'prettier/react'],
@@ -25,5 +25,12 @@ module.exports = {
     react: {
       version: 'detect'
     }
-  }
+  },
+  overrides: [
+    {
+      files: TEST_PATTERNS,
+      extends: ['plugin:testing-library/react'],
+      plugins: ['testing-library']
+    }
+  ]
 }

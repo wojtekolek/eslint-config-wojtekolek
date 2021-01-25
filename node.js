@@ -1,7 +1,5 @@
-const { warning, off, error, TS_EXTENSIONS, ALL_EXTENSIONS } = require('./consts')
+const { warning, off, error, TS_EXTENSIONS, ALL_EXTENSIONS, TEST_PATTERNS } = require('./consts')
 const restrictedGlobals = require('eslint-restricted-globals')
-
-const TEST_PATTERNS = ['**/__tests__/**/*.[jt]s?(x)', '**/?(*.)+(spec|test).[tj]s?(x)']
 
 module.exports = {
   parser: 'babel-eslint',
@@ -46,10 +44,10 @@ module.exports = {
         }
       },
       rules: {
+        'no-unused-vars': off,
         '@typescript-eslint/no-unused-vars': [error, { argsIgnorePattern: '^_' }],
         '@typescript-eslint/prefer-optional-chain': error,
-        'no-dupe-class-members': off,
-        'no-unused-vars': off
+        'no-dupe-class-members': off
       }
     },
     {
