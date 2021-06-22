@@ -17,9 +17,24 @@ module.exports = {
     'react/no-unused-prop-types': off,
     'react/prop-types': off,
     'react/require-default-props': off,
-    'no-unused-vars': [error, { argsIgnorePattern: '^_', caughtErrorsIgnorePattern: '^_' }],
     'react-hooks/rules-of-hooks': error,
-    'react-hooks/exhaustive-deps': warning
+    'react-hooks/exhaustive-deps': warning,
+    'react/jsx-closing-tag-location': error,
+    'react/jsx-curly-spacing': [error, 'never', { allowMultiline: true }],
+    'react/jsx-handler-names': [
+      off,
+      {
+        eventHandlerPrefix: 'handle',
+        eventHandlerPropPrefix: 'on'
+      }
+    ],
+    'react/jsx-pascal-case': [
+      error,
+      {
+        allowAllCaps: true,
+        ignore: []
+      }
+    ]
   },
   settings: {
     react: {

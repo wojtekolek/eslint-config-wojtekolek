@@ -1,9 +1,22 @@
-const { warning, off, error, TS_EXTENSIONS, ALL_EXTENSIONS, TEST_PATTERNS } = require('./consts')
+const {
+  warning,
+  off,
+  error,
+  TS_EXTENSIONS,
+  ALL_EXTENSIONS,
+  TEST_PATTERNS,
+  TS_PATTERNS
+} = require('./consts')
 const restrictedGlobals = require('eslint-restricted-globals')
 
 module.exports = {
   parser: 'babel-eslint',
-  extends: ['eslint:recommended', 'plugin:promise/recommended', 'prettier'],
+  extends: [
+    require.resolve('./base.js'),
+    'eslint:recommended',
+    'plugin:promise/recommended',
+    'prettier'
+  ],
   env: {
     es6: true,
     node: true
@@ -19,6 +32,7 @@ module.exports = {
     'import/prefer-default-export': off,
     'no-restricted-globals': [error].concat(restrictedGlobals),
     'no-restricted-syntax': [error, 'WithStatement'],
+    'no-unused-vars': [error, { argsIgnorePattern: '^_', caughtErrorsIgnorePattern: '^_' }],
     'promise/prefer-await-to-then': warning,
     'import/no-extraneous-dependencies': [
       error,
@@ -29,7 +43,7 @@ module.exports = {
   },
   overrides: [
     {
-      files: ['*.ts', '*.tsx'],
+      files: TS_PATTERNS,
       parser: '@typescript-eslint/parser',
       plugins: ['@typescript-eslint/eslint-plugin'],
       settings: {
@@ -40,7 +54,8 @@ module.exports = {
         'import/resolver': {
           node: {
             extensions: ALL_EXTENSIONS
-          }
+          },
+          typescript: {} // this loads <rootdir>/tsconfig.json to eslint
         }
       },
       rules: {

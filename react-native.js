@@ -1,4 +1,12 @@
-const { warning, off, error, ALL_EXTENSIONS, TS_EXTENSIONS } = require('./consts')
+const {
+  warning,
+  off,
+  error,
+  ALL_EXTENSIONS,
+  TS_EXTENSIONS,
+  JS_PATTERNS,
+  TS_PATTERNS
+} = require('./consts')
 
 module.exports = {
   extends: require.resolve('./react.js'),
@@ -15,7 +23,7 @@ module.exports = {
   },
   overrides: [
     {
-      files: ['*.js', '*.jsx'],
+      files: JS_PATTERNS,
       settings: {
         'import/extensions': ALL_EXTENSIONS,
         'import/resolver': {
@@ -26,7 +34,7 @@ module.exports = {
       }
     },
     {
-      files: ['*.ts', '*.tsx'],
+      files: TS_PATTERNS,
       settings: {
         'import/extensions': ALL_EXTENSIONS,
         'import/parsers': {

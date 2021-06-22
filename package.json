@@ -1,6 +1,6 @@
 {
   "name": "@wojtekolek/eslint-config",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "description": "ESLint preset with prettier config",
   "main": "node.js",
   "repository": "git@github.com:wojtekolek/eslint-config-wojtekolek.git",
@@ -24,12 +24,11 @@
     "eslint-plugin-react-hooks": "^4.2.0",
     "eslint-plugin-react-native": "^3.10.0",
     "eslint-plugin-testing-library": "^3.10.1",
-    "eslint-restricted-globals": "^0.2.0",
-    "prettier": "^2.2.0"
+    "eslint-restricted-globals": "^0.2.0"
   },
   "devDependencies": {
     "eslint": "^7.0.0",
-    "typescript": "^4.0.5"
+    "prettier": "^2.3.1"
   },
   "peerDependencies": {
     "eslint": ">=6",
