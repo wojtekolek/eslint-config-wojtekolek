@@ -1,4 +1,4 @@
-const { error, off } = require('./constants')
+const { error, off } = require('./consts')
 
 module.exports = {
   extends: [require.resolve('./react.js'), 'plugin:@next/next/recommended'],
