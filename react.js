@@ -1,7 +1,7 @@
 const { warning, off, error, TEST_PATTERNS } = require('./consts')
 
 module.exports = {
-  extends: [require.resolve('./node.js'), 'plugin:react/recommended', 'prettier/react'],
+  extends: [require.resolve('./node.js'), 'plugin:react/recommended'],
   plugins: ['react', 'react-hooks'],
   parserOptions: {
     ecmaFeatures: {
@@ -12,6 +12,7 @@ module.exports = {
     browser: true
   },
   rules: {
+    'react/react-in-jsx-scope': off,
     'react/display-name': off,
     'react/no-multi-comp': [warning, { ignoreStateless: true }],
     'react/no-unused-prop-types': off,

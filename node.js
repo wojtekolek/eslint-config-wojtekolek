@@ -30,6 +30,7 @@ module.exports = {
     'import/no-dynamic-require': off,
     'import/no-unresolved': error,
     'import/prefer-default-export': off,
+    'import/no-default-export': error,
     'no-restricted-globals': [error].concat(restrictedGlobals),
     'no-restricted-syntax': [error, 'WithStatement'],
     'no-unused-vars': [error, { argsIgnorePattern: '^_', caughtErrorsIgnorePattern: '^_' }],
