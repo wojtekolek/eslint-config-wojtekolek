@@ -5,7 +5,7 @@ module.exports = {
     // babel inserts `'use strict';` for us
     strict: [error, 'never'],
     'import/newline-after-import': [error, { count: 1 }],
-    'import/order': error,
+    'import/order': [error, { groups: ['builtin', 'external', 'internal'] }],
     'arrow-body-style': [error, 'as-needed'],
     'block-spacing': [error, 'always'],
     'brace-style': [error, '1tbs', { allowSingleLine: true }],
