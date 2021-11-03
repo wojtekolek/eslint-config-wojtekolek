@@ -10,7 +10,7 @@ const {
 const restrictedGlobals = require('eslint-restricted-globals')
 
 module.exports = {
-  parser: 'babel-eslint',
+  parser: '@babel/eslint-parser',
   extends: [
     require.resolve('./base.js'),
     'eslint:recommended',
