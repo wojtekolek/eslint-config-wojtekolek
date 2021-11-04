@@ -11,6 +11,16 @@ const restrictedGlobals = require('eslint-restricted-globals')
 
 module.exports = {
   parser: '@babel/eslint-parser',
+  parserOptions: {
+    ecmaFeatures: {
+      globalReturn: false,
+      impliedStrict: true,
+      jsx: true
+    },
+    ecmaVersion: 2021,
+    requireConfigFile: false,
+    sourceType: 'module'
+  },
   extends: [
     require.resolve('./base.js'),
     'eslint:recommended',
@@ -18,10 +28,11 @@ module.exports = {
     'prettier'
   ],
   env: {
+    browser: true,
     es6: true,
     node: true
   },
-  plugins: ['import', 'promise'],
+  plugins: ['@babel', 'import', 'promise'],
   parserOptions: {
     sourceType: 'module'
   },
