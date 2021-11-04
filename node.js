@@ -21,7 +21,7 @@ module.exports = {
     es6: true,
     node: true
   },
-  plugins: ['import'],
+  plugins: ['import', 'promise'],
   parserOptions: {
     sourceType: 'module'
   },
