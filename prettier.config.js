@@ -5,7 +5,7 @@ module.exports = {
   singleQuote: true,
   tabWidth: 2,
   trailingComma: 'none',
-  importOrder: ['^react$', '<THIRD_PARTY_MODULES>', '^(.*)/(.*)$', '^@(.*)/(.*)$', '^[./]'],
+  importOrder: ['^react$', '<THIRD_PARTY_MODULES>', '^(*)/(.*)$', '^@(.*)/(.*)$', '^[./]'],
   importOrderSeparation: true,
   importOrderSortSpecifiers: true,
   overrides: [
