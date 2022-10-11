@@ -5,14 +5,16 @@ module.exports = {
   singleQuote: true,
   tabWidth: 2,
   trailingComma: 'none',
+  plugins: [require.resolve('@trivago/prettier-plugin-sort-imports')],
   importOrder: [
     '^react$',
     '<THIRD_PARTY_MODULES>',
-    '^[@]?(components|modules|utils)/(.*)$',
+    '^[@]?(components|modules|utils|public)/(.*)$',
     '^[./]'
   ],
   importOrderSeparation: true,
   importOrderSortSpecifiers: true,
+  importOrderCaseInsensitive: true,
   overrides: [
     {
       files: 'package*.json',
