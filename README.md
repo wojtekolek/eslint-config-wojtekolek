@@ -1,21 +1,21 @@
 # eslint-config-wojtekolek
 
-This package provides my personal linter rules but also prettier configuration.
+A package that provides my personal linter rules but also a prettier configuration.
 
 ## Instalation
+
+``
+pnpm add -D @wojtekolek/eslint-config
+``
+
+or
 
 ``
 npm i --save-dev @wojtekolek/eslint-config
 ``
 
-or 
-
-``
-yarn add --dev @wojtekolek/eslint-config
-``
-
 ## Usage
-Simply add below code to your `.eslintrc` file:
+For `node` applications, simply add code below to your `.eslintrc` file:
 
 ```
 {
@@ -31,11 +31,32 @@ module.exports = require('@wojtekolek/eslint-config/prettier.config')
 
 ```
 
+For `react` application the config will gonna look like this: 
+```
+{
+  "extends": ["@wojtekolek/eslint-config", "@wojtekolek/eslint-config/react"]
+}
+
+```
+
+For `react-native` application the config will gonna look like this: 
+```
+{
+  "extends": ["@wojtekolek/eslint-config", "@wojtekolek/eslint-config/react-native"]
+}
+
+```
+
+For `Next.js` application the config will gonna look like this: 
+```
+{
+  "extends": ["@wojtekolek/eslint-config", "@wojtekolek/eslint-config/nextjs"]
+}
+
+```
+
 ## TypeScript
-All you need to do is make sure that you have installed following dependencies:
-- [@typescript-eslint/eslint-plugin](https://www.npmjs.com/package/@typescript-eslint/eslint-plugin)
-- [@typescript-eslint/parser](https://www.npmjs.com/package/@typescript-eslint/parser)
-- [typescript](https://www.npmjs.com/package/typescript)
+All you need to have is the `typescript` installed.
 
 ## Using with Visual Studio Code
 If you are using VSC you may want a fully supported flow with eslint and prettier which will be triggered before saving a file.
