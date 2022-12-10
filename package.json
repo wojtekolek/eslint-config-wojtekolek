@@ -1,6 +1,6 @@
 {
   "name": "@wojtekolek/eslint-config",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "ESLint preset with prettier config",
   "main": "node.js",
   "repository": "git@github.com:wojtekolek/eslint-config-wojtekolek.git",
@@ -42,6 +42,9 @@
   },
   "peerDependenciesMeta": {
     "typescript": {
+      "optional": true
+    },
+    "prettier": {
       "optional": true
     }
   }
