@@ -2,7 +2,6 @@ const { error, off } = require('./consts')
 
 module.exports = {
   rules: {
-    // babel inserts `'use strict';` for us
     strict: [error, 'never'],
     'import/newline-after-import': [error, { count: 1 }],
     'import/order': [error, { groups: ['builtin', 'external', 'internal'] }],
