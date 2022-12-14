@@ -12,7 +12,6 @@ const {
   error,
   TS_EXTENSIONS,
   JS_EXTENSIONS,
-  ALL_EXTENSIONS,
   TEST_PATTERNS,
   TS_PATTERNS,
 } = require("./consts");
@@ -26,7 +25,6 @@ module.exports = {
     allowImportExportEverywhere: true,
     sourceType: "module",
     babelOptions: {
-      presets: ["next/babel"],
       caller: {
         // Eslint supports top level await when a parser for it is included. We enable the parser by default for Babel.
         supportsTopLevelAwait: true,
@@ -53,6 +51,12 @@ module.exports = {
       error,
       {
         devDependencies: TEST_PATTERNS,
+      },
+    ],
+    "import/order": [
+      error,
+      {
+        "newlines-between": "always",
       },
     ],
   },
