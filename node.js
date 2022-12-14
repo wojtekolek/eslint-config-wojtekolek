@@ -56,6 +56,7 @@ module.exports = {
     "import/order": [
       error,
       {
+        groups: [["builtin", "external"], "parent", "sibling", "index"],
         "newlines-between": "always",
       },
     ],
