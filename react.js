@@ -54,7 +54,7 @@ module.exports = {
           },
         ],
         pathGroupsExcludedImportTypes: ["react"],
-        groups: [["builtin", "external"], "parent", "sibling", "index"],
+        groups: [["builtin", "external"], "internal", "parent", "sibling", "index"],
       },
     ],
   },

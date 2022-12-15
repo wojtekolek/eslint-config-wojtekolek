@@ -1,6 +1,6 @@
 {
   "name": "@wojtekolek/eslint-config",
-  "version": "2.0.4",
+  "version": "2.0.5",
   "description": "ESLint preset with prettier config",
   "main": "node.js",
   "repository": "git@github.com:wojtekolek/eslint-config-wojtekolek.git",
