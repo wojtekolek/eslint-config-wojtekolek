@@ -32,8 +32,8 @@ module.exports = {
     },
   },
   env: {
-    browser: true,
     node: true,
+    es6: true,
   },
   extends: [require.resolve("./base.js")],
   plugins: ["import", "promise"],

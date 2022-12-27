@@ -1,7 +1,11 @@
 const { warning, off, error, TEST_PATTERNS } = require("./consts");
 
 module.exports = {
-  extends: ["plugin:react/recommended", "plugin:react-hooks/recommended"],
+  extends: [
+    require.resolve("./node.js"),
+    "plugin:react/recommended",
+    "plugin:react-hooks/recommended",
+  ],
   plugins: ["import", "react", "jsx-a11y"],
   parserOptions: {
     ecmaFeatures: {
