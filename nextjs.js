@@ -13,7 +13,7 @@ module.exports = {
   },
   overrides: [
     {
-      files: ["./{app, pages}/**/*.[jt]s?(x)"],
+      files: ["./pages/**/*.[jt]s?(x)", "./app/**/*.[jt]s?(x)"],
       rules: {
         "import/no-default-export": off,
       },
