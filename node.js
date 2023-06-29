@@ -1,11 +1,3 @@
-/*
- * @rushstack/eslint-patch is used to include plugins as dev
- * dependencies instead of imposing them as peer dependencies
- *
- * https://www.npmjs.com/package/@rushstack/eslint-patch
- */
-require("@rushstack/eslint-patch/modern-module-resolution");
-
 const {
   warning,
   off,
@@ -18,18 +10,11 @@ const {
 const restrictedGlobals = require("eslint-restricted-globals");
 
 module.exports = {
-  parser: "@babel/eslint-parser",
   parserOptions: {
     ecmaVersion: 2021,
     requireConfigFile: false,
     allowImportExportEverywhere: true,
     sourceType: "module",
-    babelOptions: {
-      caller: {
-        // Eslint supports top level await when a parser for it is included. We enable the parser by default for Babel.
-        supportsTopLevelAwait: true,
-      },
-    },
   },
   env: {
     node: true,

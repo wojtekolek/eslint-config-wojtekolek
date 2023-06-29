@@ -43,20 +43,6 @@ module.exports = {
         img: ["Image"],
       },
     ],
-    "import/order": [
-      error,
-      {
-        pathGroups: [
-          {
-            pattern: "react",
-            group: "builtin",
-            position: "before",
-          },
-        ],
-        pathGroupsExcludedImportTypes: ["react"],
-        groups: [["builtin", "external"], "internal", "parent", "sibling", "index"],
-      },
-    ],
   },
   settings: {
     react: {
