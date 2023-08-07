@@ -43,6 +43,10 @@ module.exports = {
     {
       files: TS_PATTERNS,
       parser: "@typescript-eslint/parser",
+      parserOptions: {
+        sourceType: "module",
+        project: "./tsconfig.json",
+      },
       plugins: ["@typescript-eslint"],
       extends: "plugin:@typescript-eslint/recommended",
       rules: {
