@@ -9,6 +9,8 @@ const {
 } = require("./consts");
 const restrictedGlobals = require("eslint-restricted-globals");
 
+require("@rushstack/eslint-patch/modern-module-resolution");
+
 module.exports = {
   parserOptions: {
     ecmaVersion: 2021,
@@ -55,6 +57,7 @@ module.exports = {
       rules: {
         "no-unused-vars": off,
         "@typescript-eslint/no-unused-vars": [error, { argsIgnorePattern: "^_" }],
+        "@typescript-eslint/consistent-type-definitions": [error, "type"],
         "@typescript-eslint/prefer-optional-chain": error,
         "no-dupe-class-members": off,
       },
