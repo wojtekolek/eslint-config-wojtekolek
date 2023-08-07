@@ -44,10 +44,14 @@ module.exports = {
       files: TS_PATTERNS,
       parser: "@typescript-eslint/parser",
       parserOptions: {
-        sourceType: "module",
+        project: true,
+        tsconfigRootDir: __dirname,
       },
       plugins: ["@typescript-eslint"],
-      extends: "plugin:@typescript-eslint/recommended",
+      extends: [
+        "plugin:@typescript-eslint/recommended-type-checked",
+        "plugin:@typescript-eslint/stylistic-type-checked",
+      ],
       rules: {
         "no-unused-vars": off,
         "@typescript-eslint/no-unused-vars": [error, { argsIgnorePattern: "^_" }],
