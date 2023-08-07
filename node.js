@@ -45,10 +45,6 @@ module.exports = {
     {
       files: TS_PATTERNS,
       parser: "@typescript-eslint/parser",
-      parserOptions: {
-        project: true,
-        tsconfigRootDir: __dirname,
-      },
       plugins: ["@typescript-eslint"],
       extends: [
         "plugin:@typescript-eslint/recommended-type-checked",
@@ -58,6 +54,9 @@ module.exports = {
         "no-unused-vars": off,
         "@typescript-eslint/no-unused-vars": [error, { argsIgnorePattern: "^_" }],
         "@typescript-eslint/consistent-type-definitions": [error, "type"],
+        "@typescript-eslint/no-unsafe-assignment": off,
+        "@typescript-eslint/no-misused-promises": off,
+        "@typescript-eslint/no-unsafe-return": off,
         "@typescript-eslint/prefer-optional-chain": error,
         "no-dupe-class-members": off,
       },
