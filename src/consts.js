@@ -4,15 +4,18 @@ const STATE = {
   error: 2,
 };
 
-const JS_EXTENSIONS = [".js", ".jsx"];
+const JS_EXTENSIONS = [".js", ".jsx", ".mjs"];
 const TS_EXTENSIONS = [".ts", ".tsx", ".d.ts", ".cts", ".mts"];
 
-const JS_PATTERNS = ["*.js", "*.jsx"];
-const TS_PATTERNS = ["*.ts", "*.tsx"];
+const JS_PATTERNS = ["**/*.js", "**/*.jsx"];
+const TS_PATTERNS = ["**/*.ts", "**/*.tsx"];
 const TEST_PATTERNS = ["**/__tests__/**/*.[jt]s?(x)", "**/?(*.)+(spec|test).[tj]s?(x)"];
 
-module.exports = {
+const DEFAULT_FILES = JS_PATTERNS.concat(TS_PATTERNS);
+
+export default {
   ...STATE,
+  DEFAULT_FILES,
   JS_EXTENSIONS,
   TS_EXTENSIONS,
   ALL_EXTENSIONS: [...JS_EXTENSIONS, ...TS_EXTENSIONS],
