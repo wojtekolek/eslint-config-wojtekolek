@@ -6,7 +6,14 @@ import promisePlugin from "eslint-plugin-promise";
 import restrictedGlobals from "eslint-restricted-globals";
 import globals from "globals";
 import baseConfig from "./base.mjs";
-import { ALL_PATERNS, STATE, TEST_PATTERNS, TS_PATTERNS } from "./consts.mjs";
+import {
+  ALL_PATERNS,
+  JS_EXTENSIONS,
+  STATE,
+  TEST_PATTERNS,
+  TS_EXTENSIONS,
+  TS_PATTERNS,
+} from "./consts.mjs";
 
 /** @type {import("eslint").Linter.Config} */
 export default [
@@ -30,7 +37,15 @@ export default [
       "no-restricted-globals": [STATE.error].concat(restrictedGlobals),
       "no-restricted-syntax": [STATE.error, "WithStatement"],
       "no-unused-vars": [STATE.error, { argsIgnorePattern: "^_", caughtErrorsIgnorePattern: "^_" }],
-      // "promise/prefer-await-to-then": STATE.warning,
+      // TypeError: context.getScope is not a function
+      "promise/prefer-await-to-then": STATE.off,
+    },
+    settings: {
+      "import/resolver": {
+        "eslint-import-resolver-node": {
+          extensions: [...JS_EXTENSIONS, ".ts", ".tsx"],
+        },
+      },
     },
   },
   {
@@ -38,6 +53,7 @@ export default [
     files: TS_PATTERNS,
     languageOptions: {
       parser: tsEslintParser,
+      parserOptions: { project: true },
       sourceType: "module",
     },
     plugins: {
@@ -54,6 +70,16 @@ export default [
       "@typescript-eslint/no-unsafe-return": STATE.off,
       "@typescript-eslint/prefer-optional-chain": STATE.error,
       "no-dupe-class-members": STATE.off,
+    },
+    settings: {
+      "import/parsers": {
+        "@typescript-eslint/parser": TS_EXTENSIONS,
+      },
+      "import/resolver": {
+        typescript: {
+          alwaysTryTypes: true,
+        },
+      },
     },
   },
   {

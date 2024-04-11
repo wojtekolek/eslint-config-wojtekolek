@@ -16,6 +16,8 @@ export default [
       ...nextPlugin.configs["core-web-vitals"].rules,
       "@next/next/no-sync-scripts": STATE.error,
       "@next/next/no-page-custom-font": STATE.error,
+      // TypeError: context.getAncestors is not a function
+      "@next/next/no-duplicate-head": STATE.off,
     },
   },
   {

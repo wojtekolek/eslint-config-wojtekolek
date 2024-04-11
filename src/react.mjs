@@ -27,12 +27,14 @@ export default [
       ...jsxa11yPlugin.configs.recommended.rules,
       "react/react-in-jsx-scope": STATE.off,
       "react/display-name": STATE.off,
-      // "react/no-multi-comp": [STATE.warning, { ignoreStateless: true }],
+      // TypeError: context.getFirstTokens is not a function
+      "react/no-multi-comp": [STATE.off, { ignoreStateless: true }],
       "react/no-unused-prop-types": STATE.off,
       "react/prop-types": STATE.off,
       "react/require-default-props": STATE.off,
       "react-hooks/rules-of-hooks": STATE.error,
-      "react-hooks/exhaustive-deps": STATE.warning,
+      // TypeError: context.getSource is not a function
+      "react-hooks/exhaustive-deps": STATE.off,
       "react/jsx-closing-tag-location": STATE.error,
       "react/jsx-curly-spacing": [STATE.error, "never", { allowMultiline: true }],
       "react/jsx-handler-names": [
@@ -49,8 +51,9 @@ export default [
           ignore: [],
         },
       ],
+      "jsx-a11y/no-autofocus": STATE.off,
       "jsx-a11y/alt-text": [
-        "warn",
+        STATE.warning,
         {
           elements: ["img"],
           img: ["Image"],
