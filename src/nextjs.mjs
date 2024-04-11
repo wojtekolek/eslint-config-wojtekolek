@@ -1,27 +1,27 @@
 import nextPlugin from "@next/eslint-plugin-next";
-import { DEFAULT_FILES, error, off } from "./consts";
-import reactConfig from "./react";
+import { ALL_PATERNS, STATE } from "./consts.mjs";
+import reactConfig from "./react.mjs";
 
 /** @type {import("eslint").Linter.Config} */
 export default [
-  reactConfig,
+  ...reactConfig,
   {
     name: "next",
-    files: DEFAULT_FILES,
+    files: ALL_PATERNS,
     plugins: {
       "@next/next": nextPlugin,
     },
     rules: {
       ...nextPlugin.configs.recommended.rules,
       ...nextPlugin.configs["core-web-vitals"].rules,
-      "@next/next/no-sync-scripts": error,
-      "@next/next/no-page-custom-font": error,
+      "@next/next/no-sync-scripts": STATE.error,
+      "@next/next/no-page-custom-font": STATE.error,
     },
   },
   {
     files: ["./pages/**/*.[jt]s?(x)", "./app/**/*.[jt]s?(x)"],
     rules: {
-      "import/no-default-export": off,
+      "import/no-default-export": STATE.off,
     },
   },
 ];

@@ -1,4 +1,5 @@
-import { DEFAULT_FILES, error, off } from "./consts";
+import importPlugin from "eslint-plugin-import";
+import { ALL_PATERNS, STATE, TEST_PATTERNS } from "./consts.mjs";
 
 /** @type {import("eslint").Linter.Config} */
 export default [
@@ -8,17 +9,31 @@ export default [
   },
   {
     name: "base",
-    files: DEFAULT_FILES,
+    files: ALL_PATERNS,
+    plugins: {
+      import: importPlugin,
+    },
     rules: {
-      strict: [error, "never"],
-      "import/newline-after-import": [error, { count: 1 }],
-      "arrow-body-style": [error, "as-needed"],
-      "block-spacing": [error, "always"],
-      "brace-style": [error, "1tbs", { allowSingleLine: true }],
-      "array-bracket-spacing": [error, "never"],
-      "array-element-newline": [off, { multiline: true, minItems: 3 }],
+      strict: [STATE.error, "never"],
+      "import/extensions": STATE.off,
+      "import/no-dynamic-require": STATE.off,
+      "import/no-unresolved": STATE.error,
+      "import/prefer-default-export": STATE.off,
+      "import/no-default-export": STATE.error,
+      "import/no-extraneous-dependencies": [
+        STATE.error,
+        {
+          devDependencies: TEST_PATTERNS,
+        },
+      ],
+      // "import/newline-after-import": [STATE.error, { count: 1 }],
+      "arrow-body-style": [STATE.error, "as-needed"],
+      "block-spacing": [STATE.error, "always"],
+      "brace-style": [STATE.error, "1tbs", { allowSingleLine: true }],
+      "array-bracket-spacing": [STATE.error, "never"],
+      "array-element-newline": [STATE.off, { multiline: true, minItems: 3 }],
       "comma-dangle": [
-        off,
+        STATE.off,
         {
           arrays: "always-multiline",
           objects: "always-multiline",
@@ -27,9 +42,9 @@ export default [
           functions: "always-multiline",
         },
       ],
-      "comma-spacing": [error, { before: false, after: true }],
+      "comma-spacing": [STATE.error, { before: false, after: true }],
       "comma-style": [
-        error,
+        STATE.error,
         "last",
         {
           exceptions: {
@@ -47,10 +62,10 @@ export default [
           },
         },
       ],
-      "jsx-quotes": [off, "prefer-double"],
-      "key-spacing": [error, { beforeColon: false, afterColon: true }],
+      "jsx-quotes": [STATE.off, "prefer-double"],
+      "key-spacing": [STATE.error, { beforeColon: false, afterColon: true }],
       "max-len": [
-        error,
+        STATE.error,
         100,
         2,
         {
@@ -62,7 +77,7 @@ export default [
         },
       ],
       "max-lines": [
-        off,
+        STATE.off,
         {
           max: 300,
           skipBlankLines: true,
@@ -70,7 +85,7 @@ export default [
         },
       ],
       "max-lines-per-function": [
-        off,
+        STATE.off,
         {
           max: 50,
           skipBlankLines: true,
@@ -78,12 +93,12 @@ export default [
           IIFEs: true,
         },
       ],
-      "newline-before-return": off,
-      "no-array-constructor": error,
-      "no-nested-ternary": error,
-      "no-new-object": error,
+      "newline-before-return": STATE.off,
+      "no-array-constructor": STATE.error,
+      "no-nested-ternary": STATE.error,
+      "no-new-object": STATE.error,
       "no-restricted-syntax": [
-        error,
+        STATE.error,
         {
           selector: "ForInStatement",
           message:
@@ -105,14 +120,18 @@ export default [
             "`with` is disallowed in strict mode because it makes code impossible to predict and optimize.",
         },
       ],
-      "no-unneeded-ternary": [error, { defaultAssignment: false }],
-      "object-curly-spacing": [error, "always"],
-      "nonblock-statement-body-position": [error, "beside", { overrides: {} }],
-      "no-whitespace-before-property": error,
-      "operator-assignment": [error, "always"],
-      "quote-props": [error, "as-needed", { keywords: false, unnecessary: true, numbers: false }],
+      "no-unneeded-ternary": [STATE.error, { defaultAssignment: false }],
+      "object-curly-spacing": [STATE.error, "always"],
+      "nonblock-statement-body-position": [STATE.error, "beside", { overrides: {} }],
+      "no-whitespace-before-property": STATE.error,
+      "operator-assignment": [STATE.error, "always"],
+      "quote-props": [
+        STATE.error,
+        "as-needed",
+        { keywords: false, unnecessary: true, numbers: false },
+      ],
       "spaced-comment": [
-        error,
+        STATE.error,
         "always",
         {
           line: {
@@ -126,7 +145,7 @@ export default [
           },
         },
       ],
-      "wrap-regex": off,
+      "wrap-regex": STATE.off,
     },
   },
 ];
