@@ -1,6 +1,6 @@
 # eslint-config-wojtekolek
 
-A package that provides my personal linter rules but also a prettier configuration.
+A package that provides my personal linter rules but also a prettier configuration. (Only ESM)
 
 ## Instalation
 
@@ -15,43 +15,66 @@ npm i --save-dev @wojtekolek/eslint-config
 ``
 
 ## Usage
-For `node` applications, simply add code below to your `.eslintrc` file:
+For `node` applications, simply add code below to your `eslint.config.mjs` file:
 
 ```
-{
-  "extends": "@wojtekolek/eslint-config"
+import wojtekolekNodeEslintConfig from "@wojtekolek/eslint-config/node";
+
+/** @type {import("eslint").Linter.Config} */
+export default [
+  ...wojtekolekNodeEslintConfig,
+];
+
+```
+
+To enable prettier just export following line inside `prettier.config.mjs`:
+
+```
+import wojtekolekPrettierConfig from "@wojtekolek/eslint-config/prettier";
+
+/** @type {import("prettier").Config} */
+export default {
+  ...wojtekolekPrettierConfig
 }
-
-```
-
-To enable prettier just export following line inside `.prettierrc.js`:
-
-```
-module.exports = require('@wojtekolek/eslint-config/prettier.config')
 
 ```
 
 For `react` application the config will gonna look like this: 
 ```
-{
-  "extends": ["@wojtekolek/eslint-config", "@wojtekolek/eslint-config/react"]
-}
+import wojtekolekNodeEslintConfig from "@wojtekolek/eslint-config/node";
+import wojtekolekReactEslintConfig from "@wojtekolek/eslint-config/react";
+
+/** @type {import("eslint").Linter.Config} */
+export default [
+  ...wojtekolekNodeEslintConfig,
+  ...wojtekolekReactEslintConfig,
+];
 
 ```
 
 For `react-native` application the config will gonna look like this: 
 ```
-{
-  "extends": ["@wojtekolek/eslint-config", "@wojtekolek/eslint-config/react-native"]
-}
+import wojtekolekNodeEslintConfig from "@wojtekolek/eslint-config/node";
+import wojtekolekReactNativeEslintConfig from "@wojtekolek/eslint-config/react-native";
+
+/** @type {import("eslint").Linter.Config} */
+export default [
+  ...wojtekolekNodeEslintConfig,
+  ...wojtekolekReactNativeEslintConfig,
+];
 
 ```
 
 For `Next.js` application the config will gonna look like this: 
 ```
-{
-  "extends": ["@wojtekolek/eslint-config", "@wojtekolek/eslint-config/nextjs"]
-}
+import wojtekolekNodeEslintConfig from "@wojtekolek/eslint-config/node";
+import wojtekolekNextjsEslintConfig from "@wojtekolek/eslint-config/nextjs";
+
+/** @type {import("eslint").Linter.Config} */
+export default [
+  ...wojtekolekNodeEslintConfig,
+  ...wojtekolekNextjsEslintConfig,
+];
 
 ```
 
