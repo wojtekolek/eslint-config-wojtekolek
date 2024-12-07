@@ -4,10 +4,6 @@ import { ALL_PATERNS, STATE, TEST_PATTERNS } from "./consts.mjs";
 /** @type {import("eslint").Linter.Config} */
 export default [
   {
-    // Globally ignored config files
-    ignores: ["**/*.config.*"],
-  },
-  {
     name: "base",
     files: ALL_PATERNS,
     plugins: {
@@ -17,9 +13,9 @@ export default [
       strict: [STATE.error, "never"],
       "import/extensions": STATE.off,
       "import/no-dynamic-require": STATE.off,
-      "import/no-unresolved": STATE.error,
       "import/prefer-default-export": STATE.off,
       "import/no-default-export": STATE.error,
+      "import/no-unresolved": STATE.error,
       "import/no-extraneous-dependencies": [
         STATE.error,
         {
@@ -146,6 +142,13 @@ export default [
         },
       ],
       "wrap-regex": STATE.off,
+    },
+  },
+  {
+    ignores: ["**/*.config.*"],
+    rules: {
+      "import/prefer-default-export": STATE.error,
+      "import/no-default-export": STATE.off,
     },
   },
 ];
