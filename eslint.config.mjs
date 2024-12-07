@@ -1,5 +1,4 @@
 import { STATE } from "./src/consts.mjs";
-import reactEslintConfig from "./src/nextjs.mjs";
 import nodeEslintConfig from "./src/node.mjs";
 
 /** @type {import("eslint").Linter.Config} */

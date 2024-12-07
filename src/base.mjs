@@ -145,7 +145,7 @@ export default [
     },
   },
   {
-    ignores: ["**/*.config.*"],
+    files: ["**/*.config.*"],
     rules: {
       "import/prefer-default-export": STATE.error,
       "import/no-default-export": STATE.off,

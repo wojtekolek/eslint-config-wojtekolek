@@ -1,6 +1,6 @@
 {
   "name": "@wojtekolek/eslint-config",
-  "version": "3.0.8",
+  "version": "3.0.9",
   "description": "ESLint presets and prettier config",
   "type": "module",
   "repository": "git@github.com:wojtekolek/eslint-config-wojtekolek.git",
