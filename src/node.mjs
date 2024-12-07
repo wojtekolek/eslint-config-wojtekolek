@@ -37,8 +37,7 @@ export default [
       "no-restricted-globals": [STATE.error].concat(restrictedGlobals),
       "no-restricted-syntax": [STATE.error, "WithStatement"],
       "no-unused-vars": [STATE.error, { argsIgnorePattern: "^_", caughtErrorsIgnorePattern: "^_" }],
-      // TypeError: context.getScope is not a function
-      "promise/prefer-await-to-then": STATE.off,
+      "promise/prefer-await-to-then": STATE.error,
     },
     settings: {
       "import/resolver": {

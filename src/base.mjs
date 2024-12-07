@@ -22,7 +22,7 @@ export default [
           devDependencies: TEST_PATTERNS,
         },
       ],
-      // "import/newline-after-import": [STATE.error, { count: 1 }],
+      "import/newline-after-import": [STATE.error, { count: 1 }],
       "arrow-body-style": [STATE.error, "as-needed"],
       "block-spacing": [STATE.error, "always"],
       "brace-style": [STATE.error, "1tbs", { allowSingleLine: true }],
