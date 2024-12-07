@@ -4,8 +4,8 @@ import { ALL_PATERNS, STATE, TEST_PATTERNS } from "./consts.mjs";
 /** @type {import("eslint").Linter.Config} */
 export default [
   {
-    // Globally ignored files
-    ignores: ["**/*.config.js", "**/*.config.mjs"],
+    // Globally ignored config files
+    ignores: ["**/*.config.*"],
   },
   {
     name: "base",
