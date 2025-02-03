@@ -39,7 +39,7 @@ export default {
 
 ```
 
-For `react` application the config will gonna look like this: 
+For `react` application the config will gonna look like this:
 ```
 import wojtekolekNodeEslintConfig from "@wojtekolek/eslint-config/node";
 import wojtekolekReactEslintConfig from "@wojtekolek/eslint-config/react";
@@ -52,7 +52,7 @@ export default [
 
 ```
 
-For `react-native` application the config will gonna look like this: 
+For `react-native` application the config will gonna look like this:
 ```
 import wojtekolekNodeEslintConfig from "@wojtekolek/eslint-config/node";
 import wojtekolekReactNativeEslintConfig from "@wojtekolek/eslint-config/react-native";
@@ -65,7 +65,7 @@ export default [
 
 ```
 
-For `Next.js` application the config will gonna look like this: 
+For `Next.js` application the config will gonna look like this:
 ```
 import wojtekolekNodeEslintConfig from "@wojtekolek/eslint-config/node";
 import wojtekolekNextjsEslintConfig from "@wojtekolek/eslint-config/nextjs";
@@ -83,7 +83,7 @@ All you need to have is the `typescript` installed.
 
 ## Using with Visual Studio Code
 If you are using VSC you may want a fully supported flow with eslint and prettier which will be triggered before saving a file.
-To achieve this first install [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint) and [Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode) extensions for VSC. 
+To achieve this first install [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint) and [Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode) extensions for VSC.
 
 The final step is to add below config to your `settings.json` file.
 

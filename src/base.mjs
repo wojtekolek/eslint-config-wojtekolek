@@ -1,8 +1,8 @@
 import importPlugin from "eslint-plugin-import";
+import tseslint from "typescript-eslint";
 import { ALL_PATERNS, STATE, TEST_PATTERNS } from "./consts.mjs";
 
-/** @type {import("eslint").Linter.Config} */
-export default [
+export default tseslint.config(
   {
     name: "base",
     files: ALL_PATERNS,
@@ -151,4 +151,4 @@ export default [
       "import/no-default-export": STATE.off,
     },
   },
-];
+);

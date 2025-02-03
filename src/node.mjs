@@ -1,4 +1,3 @@
-/* eslint-disable import/no-unresolved */
 import tsEslintPlugin from "@typescript-eslint/eslint-plugin";
 import * as tsEslintParser from "@typescript-eslint/parser";
 import jestPlugin from "eslint-plugin-jest";
@@ -15,7 +14,7 @@ import {
   TS_PATTERNS,
 } from "./consts.mjs";
 
-/** @type {import("eslint").Linter.Config} */
+/** @type {Awaited<import('typescript-eslint').Config>} */
 export default [
   ...baseConfig,
   {
@@ -62,6 +61,10 @@ export default [
       ...tsEslintPlugin.configs.recommended.rules,
       ...tsEslintPlugin.configs["recommended-type-checked"].rules,
       "no-unused-vars": STATE.off,
+      "@typescript-eslint/consistent-type-imports": [
+        STATE.warning,
+        { prefer: "type-imports", fixStyle: "inline-type-imports" },
+      ],
       "@typescript-eslint/no-unused-vars": [
         STATE.error,
         {
