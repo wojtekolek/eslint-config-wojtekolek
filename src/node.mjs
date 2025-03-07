@@ -7,8 +7,8 @@ import restrictedGlobals from "eslint-restricted-globals";
 import globals from "globals";
 import baseConfig from "./base.mjs";
 import {
+  ALL_EXTENSIONS,
   ALL_PATERNS,
-  JS_EXTENSIONS,
   STATE,
   TEST_PATTERNS,
   TS_EXTENSIONS,
@@ -42,7 +42,7 @@ export default [
       "promise/prefer-await-to-then": STATE.error,
     },
     settings: {
-      "import-x/extensions": allExtensions,
+      "import-x/extensions": ALL_EXTENSIONS,
       "import-x/external-module-folders": ["node_modules", "node_modules/@types"],
     },
   },
@@ -85,7 +85,7 @@ export default [
       "no-dupe-class-members": STATE.off,
     },
     settings: {
-      "import-x/extensions": allExtensions,
+      "import-x/extensions": ALL_EXTENSIONS,
       "import-x/external-module-folders": ["node_modules", "node_modules/@types"],
       "import-x/parsers": {
         "@typescript-eslint/parser": TS_EXTENSIONS,
