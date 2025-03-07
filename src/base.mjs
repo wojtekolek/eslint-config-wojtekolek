@@ -11,18 +11,15 @@ export default tseslint.config(
     files: ALL_PATERNS,
     rules: {
       strict: [STATE.error, "never"],
-      "import/extensions": STATE.off,
-      "import/no-dynamic-require": STATE.off,
-      "import/prefer-default-export": STATE.off,
-      "import/no-default-export": STATE.error,
-      "import/no-unresolved": STATE.error,
-      "import/no-extraneous-dependencies": [
+      "import-x/no-default-export": STATE.error,
+      "import-x/no-unresolved": STATE.error,
+      "import-x/no-extraneous-dependencies": [
         STATE.error,
         {
           devDependencies: TEST_PATTERNS,
         },
       ],
-      "import/newline-after-import": [STATE.error, { count: 1 }],
+      "import-x/newline-after-import": [STATE.error, { count: 1 }],
       "arrow-body-style": [STATE.error, "as-needed"],
       "block-spacing": [STATE.error, "always"],
       "brace-style": [STATE.error, "1tbs", { allowSingleLine: true }],
