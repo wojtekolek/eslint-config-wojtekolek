@@ -1,14 +1,14 @@
-import importPlugin from "eslint-plugin-import";
+import { createTypeScriptImportResolver } from "eslint-import-resolver-typescript";
+import pluginImportX from "eslint-plugin-import-x";
 import tseslint from "typescript-eslint";
 import { ALL_PATERNS, STATE, TEST_PATTERNS } from "./consts.mjs";
 
 export default tseslint.config(
+  pluginImportX.flatConfigs.recommended,
+  pluginImportX.flatConfigs.typescript,
   {
     name: "base",
     files: ALL_PATERNS,
-    plugins: {
-      import: importPlugin,
-    },
     rules: {
       strict: [STATE.error, "never"],
       "import/extensions": STATE.off,
@@ -142,6 +142,14 @@ export default tseslint.config(
         },
       ],
       "wrap-regex": STATE.off,
+    },
+    settings: {
+      "import-x/resolver-next": [
+        createTypeScriptImportResolver({
+          alwaysTryTypes: true, // always try to resolve types under `<root>@types` directory even it doesn't contain any source code, like `@types/unist`
+          project: ["<root>/tsconfig.json"],
+        }),
+      ],
     },
   },
   {

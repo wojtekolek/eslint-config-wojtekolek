@@ -1,25 +1,15 @@
 import tsEslintPlugin from "@typescript-eslint/eslint-plugin";
 import * as tsEslintParser from "@typescript-eslint/parser";
-import eslintPluginImportX from "eslint-plugin-import-x";
 import jestPlugin from "eslint-plugin-jest";
 import promisePlugin from "eslint-plugin-promise";
 import restrictedGlobals from "eslint-restricted-globals";
 import globals from "globals";
 import baseConfig from "./base.mjs";
-import {
-  ALL_EXTENSIONS,
-  ALL_PATERNS,
-  STATE,
-  TEST_PATTERNS,
-  TS_EXTENSIONS,
-  TS_PATTERNS,
-} from "./consts.mjs";
+import { ALL_PATERNS, STATE, TEST_PATTERNS, TS_PATTERNS } from "./consts.mjs";
 
 /** @type {Awaited<import('typescript-eslint').Config>} */
 export default [
   ...baseConfig,
-  eslintPluginImportX.flatConfigs.recommended,
-  eslintPluginImportX.flatConfigs.typescript,
   {
     name: "node",
     files: ALL_PATERNS,
@@ -40,10 +30,6 @@ export default [
       "no-restricted-syntax": [STATE.error, "WithStatement"],
       "no-unused-vars": [STATE.error, { argsIgnorePattern: "^_", caughtErrorsIgnorePattern: "^_" }],
       "promise/prefer-await-to-then": STATE.error,
-    },
-    settings: {
-      "import-x/extensions": ALL_EXTENSIONS,
-      "import-x/external-module-folders": ["node_modules", "node_modules/@types"],
     },
   },
   {
@@ -83,16 +69,6 @@ export default [
       "@typescript-eslint/no-unsafe-return": STATE.off,
       "@typescript-eslint/prefer-optional-chain": STATE.error,
       "no-dupe-class-members": STATE.off,
-    },
-    settings: {
-      "import-x/extensions": ALL_EXTENSIONS,
-      "import-x/external-module-folders": ["node_modules", "node_modules/@types"],
-      "import-x/parsers": {
-        "@typescript-eslint/parser": TS_EXTENSIONS,
-      },
-      "import-x/resolver": {
-        typescript: true,
-      },
     },
   },
   {
