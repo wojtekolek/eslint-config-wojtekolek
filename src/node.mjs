@@ -1,5 +1,6 @@
 import tsEslintPlugin from "@typescript-eslint/eslint-plugin";
 import * as tsEslintParser from "@typescript-eslint/parser";
+import eslintPluginImportX from "eslint-plugin-import-x";
 import jestPlugin from "eslint-plugin-jest";
 import promisePlugin from "eslint-plugin-promise";
 import restrictedGlobals from "eslint-restricted-globals";
@@ -17,6 +18,8 @@ import {
 /** @type {Awaited<import('typescript-eslint').Config>} */
 export default [
   ...baseConfig,
+  eslintPluginImportX.flatConfigs.recommended,
+  eslintPluginImportX.flatConfigs.typescript,
   {
     name: "node",
     files: ALL_PATERNS,
@@ -37,13 +40,6 @@ export default [
       "no-restricted-syntax": [STATE.error, "WithStatement"],
       "no-unused-vars": [STATE.error, { argsIgnorePattern: "^_", caughtErrorsIgnorePattern: "^_" }],
       "promise/prefer-await-to-then": STATE.error,
-    },
-    settings: {
-      "import/resolver": {
-        "eslint-import-resolver-node": {
-          extensions: [...JS_EXTENSIONS, ".ts", ".tsx"],
-        },
-      },
     },
   },
   {
@@ -87,11 +83,6 @@ export default [
     settings: {
       "import/parsers": {
         "@typescript-eslint/parser": TS_EXTENSIONS,
-      },
-      "import/resolver": {
-        typescript: {
-          alwaysTryTypes: true,
-        },
       },
     },
   },
