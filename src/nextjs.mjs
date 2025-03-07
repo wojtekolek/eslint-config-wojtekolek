@@ -22,7 +22,7 @@ export default [
   {
     files: ["./pages/**/*.[jt]s?(x)", "./app/**/*.[jt]s?(x)"],
     rules: {
-      "import/no-default-export": STATE.off,
+      "import-x/no-default-export": STATE.off,
     },
   },
 ];

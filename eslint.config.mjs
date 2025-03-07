@@ -7,7 +7,7 @@ export default [
   {
     files: ["**/*.mjs"],
     rules: {
-      "import/no-default-export": STATE.off,
+      "import-x/no-default-export": STATE.off,
     },
   },
 ];

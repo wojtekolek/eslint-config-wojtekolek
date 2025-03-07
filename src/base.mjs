@@ -152,8 +152,8 @@ export default tseslint.config(
   {
     files: ["**/*.config.*"],
     rules: {
-      "import/prefer-default-export": STATE.error,
-      "import/no-default-export": STATE.off,
+      "import-x/prefer-default-export": STATE.error,
+      "import-x/no-default-export": STATE.off,
     },
   },
 );
