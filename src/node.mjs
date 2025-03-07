@@ -41,6 +41,10 @@ export default [
       "no-unused-vars": [STATE.error, { argsIgnorePattern: "^_", caughtErrorsIgnorePattern: "^_" }],
       "promise/prefer-await-to-then": STATE.error,
     },
+    settings: {
+      "import-x/extensions": allExtensions,
+      "import-x/external-module-folders": ["node_modules", "node_modules/@types"],
+    },
   },
   {
     name: "node-ts",
@@ -81,8 +85,13 @@ export default [
       "no-dupe-class-members": STATE.off,
     },
     settings: {
-      "import/parsers": {
+      "import-x/extensions": allExtensions,
+      "import-x/external-module-folders": ["node_modules", "node_modules/@types"],
+      "import-x/parsers": {
         "@typescript-eslint/parser": TS_EXTENSIONS,
+      },
+      "import-x/resolver": {
+        typescript: true,
       },
     },
   },
